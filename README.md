@@ -6,9 +6,9 @@ This company specializes in student loan refinancing. We are looking into findin
 We have data in a CSV file that contains information about previous student loan recipients. We will be using machine learning and neural networks, you decide to use the features . We will use features in the provided dataset to create a model that will predict the likelihood that an applicant will repay their student loans. This CSV file contains information about these students, such as their credit ranking.
 
 ## Preparing the data for use on a neural network model
-First, thing first is to import all the necessary libraries and dependencies. Then we will load the provided data from `student-loans.csv` into a DataFrame. In viewing the data We find there are `12` rows. All columns are of `float64` data types except the last column which is of `float` data type. If we look at the data, we can also see that the last column is the target variable, which indicates whether the loan was repaid. We will use the `sklearn` library to scale the features and the target variables. We will also split the data into training and testing datasets.
+First, thing is to import all the necessary libraries and dependencies. Then we will load the provided data from `student-loans.csv` into a DataFrame. In viewing the data We find there are `12` rows. All columns are of `float64` data type except the last column which is of `float` data type. If we look at the data, we can also see that the last column is the target variable, which indicates whether the loan was repaid. We will use the `sklearn` library to scale the features and the target variables. 
 
-We also see there are two groups (`value_count`) where there are represented below
+We also see that there are two groups (`value_count`) as represented below:
 ```
 credit_ranking
 1    855
@@ -24,8 +24,8 @@ This is where **deep neaural network** starts by defining our features, creating
 
 We will use the `relu` activation function for all the hidden layers and the `sigmoid` activation function for the output layer. We will also use the `binary_crossentropy` loss function, the `adam` optimizer, and the `accuracy` evaluation metric.
 
-## loan repayment prediction success by using your neural network model
-If we display the sequential model summary, we get below. Please note that addition hidden layer was added
+## Loan Repayment prediction success by using your neural network model
+If we display the sequential model summary, we get below. Please note that `additional hidden layer` with 3 nodes was added
 ```
 Model: "sequential"
 _________________________________________________________________
@@ -46,7 +46,7 @@ Non-trainable params: 0 (0.00 Byte)
 ```
 A layer was added to see if accuracy will improve. We will then compile the model, fit the model, and evaluate the model using the test data to determine the model's loss and accuracy.
 
-one noticable thing was by recompiling and fitting the model, the accuracy improved from `0.46` to `0.83`. This is a good sign that the model is learning and improving. Also can see that the loss is decreasing as the model is learning. Below is the output of the model fitting
+One noticable thing was by recompiling and fitting the model, the accuracy improved from `0.46` to `0.83`. This is a good sign that the model is learning and improving. Also can see that the loss is decreasing as the model is learning. Below is an output of the model fitting
 
 ```
 Epoch 1/150
@@ -104,5 +104,3 @@ weighted avg       0.26      0.51      0.34       460
 
 ## Conclusion
 Since this is to figure out who is most likely to repay the loan, using `collaborative-filtering` may not be wise. We can use `content-based` filtering to recommend loans to students. This will be based on the student's credit ranking, the student's income, and the student's loan amount. This will be a better way to recommend loans to students. In the real word, the challenge would be other factors not included into the data. These factors could be **economic recession or pandemic. These factors could affect the student's ability to repay the loan.**
-
-
