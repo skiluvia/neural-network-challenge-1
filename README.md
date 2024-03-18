@@ -85,22 +85,30 @@ Epoch 150/150
 ## Recommendation system for student loans
 When we avaluate the model, we get the following output
 ```
-13/13 - 0s - loss: 22.5856 - accuracy: 0.5075 - 205ms/epoch - 16ms/step
-Loss: 22.585634231567383, Accuracy: 0.5074999928474426
+13/13 - 0s - loss: 0.5271 - accuracy: 0.7450 - 50ms/epoch - 4ms/step
+Loss: 0.5270754098892212, Accuracy: 0.7450000047683716
 ```
-The model's accuracy is `0.5075` which is not good. This means that the model is not able to accurately predict whether a student will repay their loan. We can also see that the loss is `22.5856` which is high. This means that the model is not learning well. We can conclude that the model is not a good model for predicting student loan repayment.
+The model's accuracy is `0.7450` which is fairly good. This means that the model is able to accurately predict whether a student will repay their loan. This means that the model is not learning well. We can conclude that the model is a fairly good model for predicting student loan repayment.
 
 Also in looking at the classification report suggest the same observation
 ```
               precision    recall  f1-score   support
 
-           0       0.51      0.99      0.67       235
-           1       0.00      0.00      0.00       225
+           0       0.71      0.78      0.74       188
+           1       0.78      0.72      0.75       212
 
-    accuracy                           0.51       460
-   macro avg       0.25      0.50      0.33       460
-weighted avg       0.26      0.51      0.34       460
+    accuracy                           0.74       400
+   macro avg       0.75      0.75      0.74       400
+weighted avg       0.75      0.74      0.75       400
 ```
 
 ## Conclusion
-Since this is to figure out who is most likely to repay the loan, using `collaborative-filtering` may not be wise. We can use `content-based` filtering to recommend loans to students. This will be based on the student's credit ranking, the student's income, and the student's loan amount. This will be a better way to recommend loans to students. In the real word, the challenge would be other factors not included into the data. These factors could be **economic recession or pandemic. These factors could affect the student's ability to repay the loan.**
+
+As for recommendation system for student loans, we can use use a combination of `content-based` and `collaborative-filtering` to recommend loans to students. While **Content-Based filtering** is based on specific of items themselves such as interest rates, repayment terms, loan forgiveness programs, lender reputation, and eligibility criteria. Content-based filtering can ensure that recommendations align with specific criteria or preferences provided by the student, where as **Collaborative filtering** is based on the interactions of users with items, preferences and behavior of similar users. For student loans, this could involve analyzing the choices made by students with similar academic backgrounds, financial situations, career aspirations, etc. Collaborative filtering can provide personalized recommendations by leveraging the wisdom of the crowd.
+
+By combining these two techniques, you can leverage the strengths of both approaches:
+
+Collaborative filtering can provide personalized recommendations based on similarities between students.
+Content-based filtering can ensure that recommended loan options meet specific criteria or preferences provided by the student.
+
+In the real word, the challenge would be other factors not included into the data. These factors could be **economic recession or pandemic. These factors could affect the student's ability to repay the loan.**
