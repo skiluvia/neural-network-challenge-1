@@ -88,7 +88,7 @@ When we avaluate the model, we get the following output
 13/13 - 0s - loss: 0.5271 - accuracy: 0.7450 - 50ms/epoch - 4ms/step
 Loss: 0.5270754098892212, Accuracy: 0.7450000047683716
 ```
-The model's accuracy is `0.7450` which is fairly good. This means that the model is able to accurately predict whether a student will repay their loan. This means that the model is not learning well. We can conclude that the model is a fairly good model for predicting student loan repayment.
+The model's accuracy is `0.7450` which is fairly good. This means that the model is able to accurately predict whether a student will repay their loan. This means that the model is learning well. We can conclude that the model is a fairly good model for predicting student loan repayment.
 
 Also in looking at the classification report suggest the same observation
 ```
@@ -104,11 +104,11 @@ weighted avg       0.75      0.74      0.75       400
 
 ## Conclusion
 
-As for recommendation system for student loans, we can use use a combination of `content-based` and `collaborative-filtering` to recommend loans to students. While **Content-Based filtering** is based on specific of items themselves such as interest rates, repayment terms, loan forgiveness programs, lender reputation, and eligibility criteria. Content-based filtering can ensure that recommendations align with specific criteria or preferences provided by the student, where as **Collaborative filtering** is based on the interactions of users with items, preferences and behavior of similar users. For student loans, this could involve analyzing the choices made by students with similar academic backgrounds, financial situations, career aspirations, etc. Collaborative filtering can provide personalized recommendations by leveraging the wisdom of the crowd.
+As for recommendation system for student loans, we can use a combination of `content-based` and `collaborative-filtering` to recommend loans to students. While **Content-Based filtering** is based on specific of items themselves such as interest rates, repayment terms, loan forgiveness programs, lender reputation, and eligibility criteria. **Content-based** filtering can ensure that recommendations align with specific criteria or preferences provided by the student, where as **Collaborative filtering** is based on the interactions of users with items, preferences and behavior of similar users. For student loans, this could involve analyzing the choices made by students with similar academic backgrounds, financial situations, career aspirations, etc. **Collaborative filtering** can provide personalized recommendations by leveraging the wisdom of the crowd.
 
 By combining these two techniques, we can leverage the strengths of both approaches:
 
-Collaborative filtering can provide personalized recommendations based on similarities between students.
-Content-based filtering can ensure that recommended loan options meet specific criteria or preferences provided by the student.
+**Collaborative filtering** can provide personalized recommendations based on similarities between students.
+**Content-based filtering** can ensure that recommended loan options meet specific criteria or preferences provided by the student.
 
 In the real word, the challenge would be other factors not included into the data. These factors could be **economic recession or pandemic. These factors could affect the student's ability to repay the loan.**
